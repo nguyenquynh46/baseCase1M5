@@ -22,15 +22,15 @@ function App() {
             <Route exact path={'/'} element={<Login/>}/>
             <Route path={'/register'} element={<Register/>}/>
             <Route path={'home'} element={<Home/>}>
-                <Route path={''} element={<ListHome></ListHome>}>
-
+                <Route path={''} element={<HomeUser></HomeUser>}>
+                    <Route path={'search'} element={<SearchHome/>}></Route>
+                    <Route path={''} element={<ListHome/>}></Route>
+                    <Route path={'ascSort'} element={<AscSortHome/>}></Route>
+                    <Route path={'descSort'} element={<DescSortHome/>}></Route>
                 </Route>
 
                 <Route path={'add-home'} element={<AddHome/>}></Route>
-                <Route path={'search'} element={<SearchHome/>}></Route>
 
-                <Route path={'ascSort'} element={<AscSortHome/>}></Route>
-                <Route path={'descSort'} element={<DescSortHome/>}></Route>
                 <Route path={'edit-home/:id'} element={<EditHome/>}></Route>
             </Route>
         </Routes>
