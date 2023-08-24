@@ -1,17 +1,49 @@
-import {useDispatch, useSelector} from "react-redux";
-import {useEffect} from "react";
-import {deleteHomes, getHomes} from "../../service/homesService";
-import {Link, Outlet, useNavigate} from "react-router-dom";
-import Carousel from "../../Components/Carousel";
-import login from "../Login";
-import Search from "../../Components/Search";
+import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { deleteHomes, getHomes } from "../../service/homesService";
+import { Link, useNavigate } from "react-router-dom";
+
+import ReactPaginate from "react-paginate";
+
 
 export default function ListHome() {
+    // const navigate = useNavigate();
+    // const dispatch = useDispatch();
+    // const user = useSelector(state => {
+    //     return state.users.users.username
+    // })
+    // const [currentPage, setCurrentPage] = useState(0);
+    // const itemsPerPage = 3;
+    //
+    // const handlePageChange = ({ selected }) => {
+    //     setCurrentPage(selected);
+    // };
+    //
+    //
+    // const handleDelete = (id) => {
+    //     dispatch(deleteHomes(id));
+    //     navigate("/home");
+    // };
+    //
+    // const home = useSelector((state) => {
+    //     return state.homes.homes;
+    // });
+    // const offset = currentPage * itemsPerPage;
+    // const currentItems = home.slice(offset, offset + itemsPerPage);
+    //
+    // useEffect(() => {
+    //     dispatch(getHomes());
+    // }, []);
+    //
     const navigate = useNavigate();
     const dispatch = useDispatch();
-    const user = useSelector(state => {
-        return state.users.users.username
-    })
+
+    const [currentPage, setCurrentPage] = useState(0);
+    const itemsPerPage = 3;
+
+    const handlePageChange = ({ selected }) => {
+        setCurrentPage(selected);
+    };
 
     const handleDelete = (id) => {
         dispatch(deleteHomes(id));
@@ -26,7 +58,8 @@ export default function ListHome() {
         dispatch(getHomes());
     }, []);
 
-
+    const offset = currentPage * itemsPerPage;
+    const currentItems = home.slice(offset, offset + itemsPerPage);
     const themvaogiohang = () => {
         // Xử lý logic thêm vào giỏ hàng
     };
@@ -35,14 +68,19 @@ export default function ListHome() {
         <>
             <div className="container">
                 <div className="row g-4">
-
-
-                    {home.map((item, index) => (
+                    {currentItems.map((item, index) => (
                         <div
                             key={index}
                             className="col-4 wow fadeInUp items"
                             data-wow-delay="2s"
                         >
+
+                    {/*{home.map((item, index) => (*/}
+                    {/*    <div*/}
+                    {/*        key={index}*/}
+                    {/*        className="col-4 wow fadeInUp items"*/}
+                    {/*        data-wow-delay="2s"*/}
+                    {/*    >*/}
                             <div className="room-item shadow rounded overflow-hidden">
                                 <div className="position-relative">
                                     <img
@@ -97,6 +135,75 @@ export default function ListHome() {
                     ))}
                 </div>
             </div>
+            <div
+                className="pagination-container"
+                style={{
+                    display: "flex",
+                    justifyContent: "center",
+                    marginTop: "20px",
+                }}
+            >
+                <ReactPaginate
+                    previousLabel={" <> "}
+                    nextLabel={" <> "}
+                    breakLabel={"..."}
+                    pageCount={Math.ceil(home.length / itemsPerPage)}
+                    marginPagesDisplayed={2}
+                    pageRangeDisplayed={5}
+                    onPageChange={handlePageChange}
+                    containerClassName={"pagination"}
+                    activeClassName={"active"}
+                />
+            </div>
+
+
+            <style>
+                {`
+        .pagination {
+          display: flex;
+          list-style: none;
+          padding: 0;
+          margin: 0;
+        }
+        
+        .pagination li {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 30px;
+          height: 30px;
+          margin-right: 5px;
+          border: 1px solid #ddd;
+          border-radius: 50%;
+          cursor: pointer;
+          transition: background-color 0.3s ease;
+        }
+        
+        .pagination li.active {
+          background-color: #4285f4;
+          color: #fff;
+          border-color: #4285f4;
+        }
+        
+        .pagination li:hover:not(.active) {
+          background-color: #f1f1f1;
+        }
+        
+        .pagination a {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 100%;
+          height: 100%;
+          color: #555;
+          text-decoration: none;
+        }
+        
+        .pagination a:hover {
+          color: #4285f4;
+        }
+        `}
+            </style>
 
         </>
     );
