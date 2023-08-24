@@ -12,6 +12,7 @@ import ListHome from "./pages/home/ListHome";
 import {useState} from "react";
 import AscSortHome from "./pages/home/AscSortHome";
 import DescSortHome from "./pages/home/DescHome";
+import SearchHome from "./pages/home/SearchHome";
 function App() {
 
     return (
@@ -26,6 +27,8 @@ function App() {
                 </Route>
 
                 <Route path={'add-home'} element={<AddHome/>}></Route>
+                <Route path={'search'} element={<SearchHome/>}></Route>
+
                 <Route path={'ascSort'} element={<AscSortHome/>}></Route>
                 <Route path={'descSort'} element={<DescSortHome/>}></Route>
                 <Route path={'edit-home/:id'} element={<EditHome/>}></Route>

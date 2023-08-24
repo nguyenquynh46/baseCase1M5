@@ -7,7 +7,6 @@ import {BsFillBasket3Fill} from "react-icons/bs";
 export default function Navbar() {
     const navigate = useNavigate()
     const user = useSelector(state => {
-        console.log(state.users)
         return state.users.users.username
     })
     const home = useSelector((state) => {
@@ -45,9 +44,7 @@ export default function Navbar() {
 
                                     </div>
                                 </li>
-                                <li className="nav-item">
-                                    <a className="nav-link disabled">Disabled</a>
-                                </li>
+
                             </ul>
                             {/*<button onClick="showcart()"*/}
                             {/*        className="btn btn-primary rounded-0 py-4 px-md-5 d-none d-lg-block showCard"*/}
