@@ -18,7 +18,7 @@ export default function EditHome() {
     const handleEdit=(id,values)=>{
         let data={id:id,...values}
         dispatch(editHomes({id:id,data:{data}}));
-        navigate('/')
+        navigate('/home')
     }
 
     return (

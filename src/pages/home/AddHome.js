@@ -8,7 +8,7 @@ export default function AddHome(){
     const navigate=useNavigate()
     const handleAdd= ( values)=>{
         dispatch(addHomes(values))
-        navigate('/')
+        navigate('/home')
     }
 
     return (

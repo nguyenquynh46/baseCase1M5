@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+const home = [
+{ id: 1, name: 'Căn hộ cao cấp', address: 'Hà Đông', acreage: 60, price: 100, ... },
+{ id: 2, name: 'Chung cư giá rẻ', address: 'Hoàng Mai', acreage: 70, price: 60, ... },
+{ id: 3, name: 'Căn hộ sang trọng 111', address: 'Đống Đa', acreage: 65, price: 70, ... },
+{ id: 4, name: 'Căn hộ thượng lưu 111', address: 'Hai Bà Trưng', acreage: 100, price: 130, ... },
+{ id: 5, name: 'Căn hộ thượng lưu', address: 'Đống Đa', acreage: 65, price: 200, ... },
+{ id: 6, name: 'Căn hộ thượng lưu', address: 'Hà Đông', acreage: 67, price: 140, ... },
+{ id: 7, name: 'Chung cư giá rẻ', address: 'Đống Đa', acreage: 89, price: 210, ... },
+{ id: 8, name: 'Căn hộ thượng lưu', address: 'Hà Đông', acreage: 69, price: 250, ... },
+{ id: 9, name: 'Chung cư giá rẻ', address: 'Hoàng Mai', acreage: 87, price: 116, ... }
+];
+
+home.sort((a, b) => a.price - b.price);
+
+document.write(home)
+</script>
+</body>
+</html>

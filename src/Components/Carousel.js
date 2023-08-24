@@ -1,3 +1,5 @@
+import {Link} from "react-router-dom";
+
 export default function Carousel() {
     const image1 = './img/carousel-1.jpg';
 
@@ -7,27 +9,35 @@ export default function Carousel() {
                 <li data-target="#carouselExampleCaptions" data-slide-to="0" className="active"></li>
                 <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
                 <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+                <li data-target="#carouselExampleCaptions" data-slide-to="3"></li>
             </ol>
             <div className="carousel-inner">
                 <div className="carousel-item active">
-                    <img src={'./img/carousel-1.jpg'} style={{height: "400px", width: "100px"}} className="d-block w-100" alt="..." />
+                    <img src={'./img/carousel-1.jpg'} style={{height: "400px", width: "1200px"}} className="d-block w-100" alt="..." />
                     <div className="carousel-caption d-none d-md-block">
-                        <h5>First slide label</h5>
-                        <p>Some representative placeholder content for the first slide.</p>
+                        <h2>Dịch vụ thuê nhà cao cấp </h2>
+                        <button type="button" className="btn btn-warning" style={{color:"black"}}><Link to={"add-home"}>Thêm Căn Hộ</Link></button>
                     </div>
                 </div>
                 <div className="carousel-item">
-                    <img src={'./img/carousel-2.jpg'} style={{height: "500px" , width: "1200px"}} className="d-block w-100" alt="..." />
+                    <img src={'./img/carousel-2.jpg'} style={{height: "400px" , width: "1200px"}} className="d-block w-100" alt="..." />
                     <div className="carousel-caption d-none d-md-block">
-                        <h5>Second slide label</h5>
-                        <p>Some representative placeholder content for the second slide.</p>
+                        <h2>Dịch vụ thuê nhà cao cấp </h2>
+                        <button type="button" className="btn btn-warning" style={{color:"black"}}> <Link to={"add-home"}>Thêm Căn Hộ</Link></button>
                     </div>
                 </div>
                 <div className="carousel-item">
-                    <img src={'./img/carousel-1.jpg'}  style={{height: "500px" , width: "1200px"}} className="d-block w-100" alt="..." />
+                    <img src={'./img/carousel-1.jpg'}  style={{height: "400px" , width: "1200px"}} className="d-block w-100" alt="..." />
                     <div className="carousel-caption d-none d-md-block">
-                        <h5>Third slide label</h5>
-                        <p>Some representative placeholder content for the third slide.</p>
+                        <h2>Dịch vụ thuê nhà cao cấp </h2>
+                        <button type="button" className="btn btn-warning" style={{color:"black"}}> <Link to={"add-home"}>Thêm Căn Hộ</Link></button>
+                    </div>
+                </div>
+                <div className="carousel-item ">
+                    <img src={'./img/carousel-2.jpg'} style={{height: "400px" , width: "1200px"}} className="d-block w-100" alt="..." />
+                    <div className="carousel-caption d-none d-md-block">
+                        <h2>Dịch vụ thuê nhà cao cấp </h2>
+                        <button type="button" className="btn btn-warning" style={{color:"black"}}> <Link to={"add-home"}>Thêm Căn Hộ</Link></button>
                     </div>
                 </div>
             </div>
@@ -40,5 +50,6 @@ export default function Carousel() {
                 <span className="sr-only">Next</span>
             </button>
         </div>
+
     );
 }

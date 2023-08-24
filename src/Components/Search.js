@@ -1,4 +1,8 @@
+import {useSelector} from "react-redux";
+import {Formik} from "formik";
+
 export default function Search(){
+    const home= useSelector(state => state.homes.homes)
     return (
         <>
             <div className="container-fluid booking pb-5 wow fadeIn" data-wow-delay="0.1s" style={{height:"100px", margin:"10px"}}>
@@ -57,7 +61,7 @@ export default function Search(){
                                 </div>
                             </div>
                             <div className="col-md-2" id="timkiem1">
-                                <button className="btn btn-primary w-100" onClick="loadListSearch()">Tìm kiếm</button>
+                                <button className="btn btn-warning btn-primary w-100" onClick="loadListSearch()">Tìm kiếm</button>
                             </div>
                         </div>
                     </div>
