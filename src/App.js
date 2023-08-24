@@ -18,6 +18,7 @@ function App() {
     return (
    <>
     <div className="container-fluid">
+        Linh đẹp trai
         <Routes>
             <Route exact path={'/'} element={<Login/>}/>
             <Route path={'/register'} element={<Register/>}/>
