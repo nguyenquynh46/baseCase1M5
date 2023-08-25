@@ -16,6 +16,7 @@ export default function EditHome() {
        }
     }
     const handleEdit=(id,values)=>{
+
         let data={id:id,...values}
         dispatch(editHomes({id:id,data:{data}}));
         navigate('/home')
@@ -24,7 +25,7 @@ export default function EditHome() {
     return (
         <>
             <div className={"row"}>
-                <div className={"col-12"}>
+                <div className={"col-10"}>
                     <h1 style={{textAlign: 'center'}}>Add Homes</h1>
                     <Formik initialValues={{name: home.name, address: home.address,acreage:home.acreage,price:home.price,des:home.des,status:home.status,image:home.image,user:{id:home.user.id}}} onSubmit={(values) => {
                         handleEdit(home.id,values)

@@ -1,7 +1,7 @@
 import {Link, useLocation, useNavigate} from "react-router-dom";
 import {useDispatch, useSelector} from "react-redux";
 import {deleteHomes} from "../../service/homesService";
-
+import {toast} from "react-toastify"
 export default function SearchHome(){
     const dispatch= useDispatch();
     const navigate=useNavigate()

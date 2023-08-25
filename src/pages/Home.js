@@ -9,7 +9,8 @@ import Search from "../Components/Search";
 export  default function Home(){
 
     return(
-        <>
+        <> {/*<Navbar></Navbar>*/}
+            <Navbar></Navbar>
             <Outlet></Outlet>
             {/*<Navbar></Navbar>*/}
             {/*<div className={"row"}>*/}

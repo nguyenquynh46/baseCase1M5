@@ -7,7 +7,7 @@ import {Outlet} from "react-router-dom";
 export  default  function HomeUser(){
     return (
         <>
-            <Navbar></Navbar>
+
             <div className={"row"}>
                 <div className={"col-2"}></div>
                 <div className={"col-8"}>
@@ -29,6 +29,7 @@ export  default  function HomeUser(){
                 <h1 className="mb-5"><span className="text-primary  text-uppercase">Dịch vụ của chúng tôi</span></h1>
             </div>
             <Outlet></Outlet>
+
         </>
     )
 
